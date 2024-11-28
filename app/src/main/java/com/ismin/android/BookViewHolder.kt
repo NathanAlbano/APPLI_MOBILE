@@ -5,8 +5,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class BookViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
-    var txvIsbn = rootView.findViewById<TextView>(R.id.r_book_txv_isbn)
-    var txvTitle = rootView.findViewById<TextView>(R.id.r_book_txv_title)
-    var txvAuthor = rootView.findViewById<TextView>(R.id.r_book_txv_author)
-    var txvDate = rootView.findViewById<TextView>(R.id.r_book_txv_date)
+    // Références aux TextViews pour afficher les propriétés des livres
+    var txvName: TextView = rootView.findViewById(R.id.r_book_txv_name)
+    var txvCommune: TextView = rootView.findViewById(R.id.r_book_txv_commune)
+    var txvPostalCode: TextView = rootView.findViewById(R.id.r_book_txv_postal_code)
+    var txvDayStart: TextView = rootView.findViewById(R.id.r_book_txv_day_start)
+    var txvDayEnd: TextView = rootView.findViewById(R.id.r_book_txv_day_end)
+    var txvStartTime: TextView = rootView.findViewById(R.id.r_book_txv_start_time)
+    var txvEndTime: TextView = rootView.findViewById(R.id.r_book_txv_end_time)
 }

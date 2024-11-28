@@ -18,42 +18,91 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/a_create_book_edt_isbn"
+            android:id="@+id/a_create_book_edt_Id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:ems="10"
             android:inputType="text"
-            android:hint="@string/isbn" />
+            android:hint="ID" />
 
         <EditText
-            android:id="@+id/a_create_book_edt_title"
+            android:id="@+id/a_create_book_edt_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:ems="10"
             android:inputType="text"
-            android:hint="@string/title" />
+            android:hint="Name" />
 
         <EditText
-            android:id="@+id/a_create_book_edt_author"
+            android:id="@+id/a_create_book_edt_commune"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:ems="10"
             android:inputType="text"
-            android:hint="@string/author" />
+            android:hint="Commune" />
 
         <EditText
-            android:id="@+id/a_create_book_edt_date"
+            android:id="@+id/a_create_book_edt_postal_code"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:ems="10"
-            android:inputType="date"
-            android:hint="@string/date"/>
+            android:inputType="text"
+            android:hint="Postal_code" />
+
+        <EditText
+            android:id="@+id/a_create_book_edt_day_start"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Day_start" />
+
+        <EditText
+            android:id="@+id/a_create_book_edt_day_end"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Day_end" />
+
+        <EditText
+            android:id="@+id/a_create_book_edt_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Start_time" />
+
+        <EditText
+            android:id="@+id/a_create_book_edt_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="End time" />
+
+
+        <EditText
+            android:id="@+id/a_create_book_edt_latitude"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Latitude" />
+
+        <EditText
+            android:id="@+id/a_create_book_edt_longitude"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Longitude" />
 
         <Button
             android:id="@+id/a_create_book_btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/save" />
+            android:text="Save" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

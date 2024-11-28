@@ -6,39 +6,72 @@
     android:layout_height="wrap_content"
     android:padding="4dp">
 
+    <!-- Affichage du nom du service -->
     <TextView
-        android:id="@+id/r_book_txv_title"
+        android:id="@+id/r_book_txv_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Candide" />
+        tools:text="Nom du service" />
 
+    <!-- Affichage de la commune -->
     <TextView
-        android:id="@+id/r_book_txv_author"
+        android:id="@+id/r_book_txv_commune"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_title"
-        tools:text="Voltaire" />
+        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_name"
+        tools:text="Commune" />
 
+    <!-- Affichage du code postal -->
     <TextView
-        android:id="@+id/r_book_txv_date"
+        android:id="@+id/r_book_txv_postal_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toEndOf="@+id/r_book_txv_author"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_title"
-        tools:text="22/10/1678" />
+        app:layout_constraintStart_toEndOf="@+id/r_book_txv_commune"
+        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_name"
+        tools:text="12345" />
 
+    <!-- Affichage des jours de début et fin -->
     <TextView
-        android:id="@+id/r_book_txv_isbn"
+        android:id="@+id/r_book_txv_day_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_author"
-        tools:text="123-54394530" />
+        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_postal_code"
+        tools:text="Jour d'ouverture: Lundi" />
+
+    <TextView
+        android:id="@+id/r_book_txv_day_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_day_start"
+        tools:text="Jour de fermeture: Vendredi" />
+
+    <!-- Affichage des heures d'ouverture -->
+    <TextView
+        android:id="@+id/r_book_txv_start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_day_end"
+        tools:text="Heure d'ouverture: 09:00" />
+
+    <!-- Affichage des heures de fermeture -->
+    <TextView
+        android:id="@+id/r_book_txv_end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_start_time"
+        tools:text="Heure de fermeture: 12:00" />
 </androidx.constraintlayout.widget.ConstraintLayout>
