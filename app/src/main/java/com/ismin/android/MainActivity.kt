@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    val SERVER_BASE_URL = "https://app_6822b6a3-4b2d-464e-9264-380a5f46846f.cleverapps.io/"
+    val SERVER_BASE_URL = "https://app-6822b6a3-4b2d-464e-9264-380a5f46846f.cleverapps.io/"
 
 
     val retrofit = Retrofit.Builder()
