@@ -1,4 +1,5 @@
 <resources>
+    <string name="My_Api_Key">AIzaSyCR8MjpwvgQ34ePj-pcULKqhSaEPHKFa1A</string>
     <string name="app_name">Android</string>
     <string name="save">Save</string>
     <string name="isbn">ISBN</string>

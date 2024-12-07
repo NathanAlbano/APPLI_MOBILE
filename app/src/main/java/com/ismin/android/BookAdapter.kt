@@ -1,12 +1,11 @@
-
-
 package com.ismin.android
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class BookAdapter(private var books: List<Book>) : RecyclerView.Adapter<BookViewHolder>() {
+class BookAdapter(private var books: List<Book>, private val onBookClickListener: (Book) -> Unit) : RecyclerView.Adapter<BookViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val rowView = LayoutInflater.from(parent.context)
@@ -16,14 +15,28 @@ class BookAdapter(private var books: List<Book>) : RecyclerView.Adapter<BookView
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         val book = books[position]
-        //holder.txvId.text = "ID: ${book.id}"                // Affichage de l'ID
-        holder.txvName.text = "Nom: ${book.name}"            // Affichage du nom du service
-        holder.txvCommune.text = "Commune: ${book.commune}"  // Affichage de la commune
-        holder.txvPostalCode.text = "Code postal: ${book.postalCode}"  // Code postal
-        holder.txvDayStart.text = "Début: ${book.dayStart}"  // Jour de début
-        holder.txvDayEnd.text = "Fin: ${book.dayEnd}"        // Jour de fin
-        holder.txvStartTime.text = "Ouverture: ${book.startTime}"  // Heure d'ouverture
-        holder.txvEndTime.text = "Fermeture: ${book.endTime}"  // Heure de fermeture
+        // Mise à jour des TextViews en fonction des nouvelles variables
+        holder.txvName.text = "Nom: ${book.name}"
+        holder.txvCommune.text = "Commune: ${book.commune}"
+        holder.txvDate.text = "Date: ${book.date}"
+        holder.txvCirconference.text = "Circonférence: ${book.circonference}"
+        holder.txvHauteur.text = "Hauteur: ${book.hauteur}"
+        holder.txvFavori.text = if (book.est_favori == "true") "Favori: Oui" else "Favori: Non"
+
+        if (book.photoUrl.isNullOrEmpty()) {
+            // Load the default image if photoUrl is null or empty
+            holder.txvPhotoUrl.setImageResource(R.drawable.tree)
+        } else {
+            // Load the image from the URL using Glide if photoUrl is not empty
+            Glide.with(holder.itemView.context)
+                .load(book.photoUrl)  // Replace `book.photoUrl` with the actual URL of the image
+                .into(holder.txvPhotoUrl)
+        }
+
+        // Set the click listener for the entire item
+        holder.itemView.setOnClickListener {
+            onBookClickListener(book) // Trigger the click listener and pass the clicked book
+        }
     }
 
     override fun getItemCount(): Int {

@@ -14,7 +14,7 @@
 
         <EditText
             android:id="@+id/a_create_book_edt_name"
-            android:layout_width="331dp"
+            android:layout_width="282dp"
             android:layout_height="120dp"
             android:ems="10"
             android:inputType="text"
@@ -33,7 +33,7 @@
     <ImageView
         android:id="@+id/a_create_book_edt_photourl"
         android:layout_width="281dp"
-        android:layout_height="368dp"
+        android:layout_height="329dp"
         android:layout_gravity="center"
         android:contentDescription="Photo URL"
         android:scaleType="centerCrop" />

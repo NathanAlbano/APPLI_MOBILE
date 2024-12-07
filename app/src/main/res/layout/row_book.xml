@@ -1,77 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4dp">
-
-    <!-- Affichage du nom du service -->
-    <TextView
-        android:id="@+id/r_book_txv_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Nom du service" />
-
-    <!-- Affichage de la commune -->
-    <TextView
-        android:id="@+id/r_book_txv_commune"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_name"
-        tools:text="Commune" />
-
-    <!-- Affichage du code postal -->
-    <TextView
-        android:id="@+id/r_book_txv_postal_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toEndOf="@+id/r_book_txv_commune"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_name"
-        tools:text="12345" />
-
-    <!-- Affichage des jours de début et fin -->
-    <TextView
-        android:id="@+id/r_book_txv_day_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_postal_code"
-        tools:text="Jour d'ouverture: Lundi" />
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
-        android:id="@+id/r_book_txv_day_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_day_start"
-        tools:text="Jour de fermeture: Vendredi" />
+        android:id="@+id/row_book_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="Name"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
-    <!-- Affichage des heures d'ouverture -->
-    <TextView
-        android:id="@+id/r_book_txv_start_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_day_end"
-        tools:text="Heure d'ouverture: 09:00" />
+    <ImageView
+        android:id="@+id/row_book_photourl"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:layout_gravity="center"
+        android:contentDescription="Photo URL"
+        android:scaleType="fitXY" />
 
-    <!-- Affichage des heures de fermeture -->
     <TextView
-        android:id="@+id/r_book_txv_end_time"
-        android:layout_width="wrap_content"
+        android:id="@+id/row_book_commune"
+        android:layout_width="153dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/r_book_txv_start_time"
-        tools:text="Heure de fermeture: 12:00" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Commune"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/row_book_date"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/row_book_circonference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Circonférence"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/row_book_hauteur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hauteur"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/row_book_favori"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Favori"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

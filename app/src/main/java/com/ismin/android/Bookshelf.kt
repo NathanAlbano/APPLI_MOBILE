@@ -19,6 +19,13 @@ class Bookshelf {
             .sortedBy { book -> book.name })  // Tri par nom
     }
 
+    fun getAllBooksFotos(): ArrayList<Book> {
+        return ArrayList(storage.values.sortedWith(compareBy(
+            { it.photoUrl.isEmpty() }, // Trier par `photourl` vide ou non (false avant true)
+            { it.name } // Ensuite trier par nom en ordre alphabétique
+        )))
+    }
+
     // Récupérer les livres d'une commune spécifique
     fun getBooksOf(commune: String): List<Book> {
         return storage.filterValues { book -> book.commune.equals(commune, ignoreCase = true) }
