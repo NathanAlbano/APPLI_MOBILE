@@ -36,7 +36,7 @@ class InfoFragment : Fragment() {
             2. Accéder à une map recensant la localisation des données
             3. Accéder aux informations relatives à ce projet
             
-            Lorsque vous regardez les spécifités d'un élément, vous pouvez revenir sur la liste des arbres en balayant l'écran vers la droite.
+            Lorsque vous regardez les spécifités d'un élément, vous pouvez revenir sur la liste des arbres en balayant l'écran vers la droite ou en faisant un click droit.
             
             Pour rafraichir les données, il vous suffit de cliquer sur l'icone "liste" du menu.
             
