@@ -9,20 +9,20 @@
     <!-- Name Input -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="124dp"
+        android:layout_height="79dp"
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/a_create_book_edt_name"
+            android:id="@+id/a_create_arbre_edt_name"
             android:layout_width="331dp"
-            android:layout_height="120dp"
+            android:layout_height="96dp"
             android:ems="10"
             android:inputType="text"
             android:padding="8dp"
             android:text="Name" />
 
         <RatingBar
-            android:id="@+id/a_create_book_edt_est_favori"
+            android:id="@+id/a_create_arbre_edt_est_favori"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numStars="1" />
@@ -31,9 +31,9 @@
 
     <!-- Photo URL Image -->
     <ImageView
-        android:id="@+id/a_create_book_edt_photourl"
+        android:id="@+id/a_create_arbre_edt_photourl"
         android:layout_width="281dp"
-        android:layout_height="368dp"
+        android:layout_height="299dp"
         android:layout_gravity="center"
         android:contentDescription="Photo URL"
         android:scaleType="centerCrop" />
@@ -50,7 +50,7 @@
         android:paddingTop="8dp">
 
         <EditText
-            android:id="@+id/a_create_book_edt_commune"
+            android:id="@+id/a_create_arbre_edt_commune"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -60,7 +60,7 @@
             android:padding="8dp" />
 
         <EditText
-            android:id="@+id/a_create_book_edt_date"
+            android:id="@+id/a_create_arbre_edt_date"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -80,7 +80,7 @@
         android:paddingTop="8dp">
 
         <EditText
-            android:id="@+id/a_create_book_edt_envergure"
+            android:id="@+id/a_create_arbre_edt_envergure"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -90,7 +90,7 @@
             android:padding="8dp" />
 
         <EditText
-            android:id="@+id/a_create_book_edt_circonference"
+            android:id="@+id/a_create_arbre_edt_circonference"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -104,21 +104,21 @@
 
     <!-- Hauteur TextView -->
     <TextView
-        android:id="@+id/a_create_book_edt_hauteur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/a_create_arbre_edt_hauteur"
+        android:layout_width="68dp"
+        android:layout_height="44dp"
         android:paddingTop="8dp"
         android:text="Hauteur" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="163dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
         android:orientation="vertical"
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/a_create_book_edt_id"
+            android:id="@+id/a_create_arbre_edt_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ID: 12345"
@@ -126,7 +126,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/a_create_book_edt_longitude"
+            android:id="@+id/a_create_arbre_edt_longitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Longitude: 10.1234"
@@ -134,7 +134,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/a_create_book_edt_latitude"
+            android:id="@+id/a_create_arbre_edt_latitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Latitude: 20.5678"

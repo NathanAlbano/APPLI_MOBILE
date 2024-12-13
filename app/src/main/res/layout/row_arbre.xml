@@ -6,7 +6,7 @@
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/row_book_name"
+        android:id="@+id/row_arbre_name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:clickable="false"
@@ -19,7 +19,7 @@
         android:textSize="24sp" />
 
     <ImageView
-        android:id="@+id/row_book_photourl"
+        android:id="@+id/row_arbre_photourl"
         android:layout_width="match_parent"
         android:layout_height="231dp"
         android:layout_gravity="center"
@@ -27,35 +27,35 @@
         android:scaleType="fitXY" />
 
     <TextView
-        android:id="@+id/row_book_commune"
+        android:id="@+id/row_arbre_commune"
         android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:text="Commune"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/row_book_date"
+        android:id="@+id/row_arbre_date"
         android:layout_width="179dp"
         android:layout_height="wrap_content"
         android:text="Date"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/row_book_circonference"
+        android:id="@+id/row_arbre_circonference"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Circonférence"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/row_book_hauteur"
+        android:id="@+id/row_arbre_hauteur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hauteur"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/row_book_favori"
+        android:id="@+id/row_arbre_favori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Favori"

@@ -2,23 +2,17 @@ package com.ismin.android
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcel
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity(), BookListFragment.OnBookClickListener {
+class MainActivity : AppCompatActivity(), ArbreListFragment.OnArbreClickListener {
 
     val SERVER_BASE_URL = "https://app-6822b6a3-4b2d-464e-9264-380a5f46846f.cleverapps.io/"
 
@@ -27,43 +21,43 @@ class MainActivity : AppCompatActivity(), BookListFragment.OnBookClickListener {
         .baseUrl(SERVER_BASE_URL)
         .build()
 
-    val bookService = retrofit.create(BookService::class.java)
+    val arbreService = retrofit.create(ArbreService::class.java)
 
-    private fun getAllBooksRetrofit() {
-        bookService.getBooks()
-            .enqueue(object : Callback<List<Book>> {
-                override fun onResponse(call: Call<List<Book>>, response: Response<List<Book>>) {
-                    val allBooks: List<Book>? = response.body()
-                    if (allBooks != null) {
-                        bookshelf.clear()
-                        for (book in allBooks) {
-                            bookshelf.addBook(book)
+    private fun getAllArbresRetrofit() {
+        arbreService.getArbres()
+            .enqueue(object : Callback<List<Arbre>> {
+                override fun onResponse(call: Call<List<Arbre>>, response: Response<List<Arbre>>) {
+                    val allArbres: List<Arbre>? = response.body()
+                    if (allArbres != null) {
+                        arbreshelf.clear()
+                        for (arbre in allArbres) {
+                            arbreshelf.addArbre(arbre)
                         }
-                        displayBookListFragment()
+                        displayArbreListFragment()
                     }
                 }
 
-                override fun onFailure(call: Call<List<Book>>, t: Throwable) {
+                override fun onFailure(call: Call<List<Arbre>>, t: Throwable) {
                     Log.e("helpme", "ON NE CHARGE PAS LES LIVRES DU SERV ")
                 }
             })
     }
 
-    public val bookshelf = Bookshelf()
-    private lateinit var bookAdapter: BookAdapter
+    public val arbreshelf = Arbreshelf()
+    private lateinit var arbreAdapter: ArbreAdapter
 
-    private fun displayBookListFragment() {
+    private fun displayArbreListFragment() {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
 
-        // Create a Bundle and pass the list of books to the fragment
-        val bundle = Bundle()
-        bundle.putSerializable(MY_KEY, ArrayList(bookshelf.getAllBooks()))  // Pass the books to the fragment
 
-        // Create the fragment and set its arguments
-        val fragment = BookListFragment()
+        val bundle = Bundle()
+        bundle.putSerializable(MY_KEY, ArrayList(arbreshelf.getAllArbres()))
+
+
+        val fragment = ArbreListFragment()
         fragment.arguments = bundle
 
-        // Replace the current fragment with the new one
+
         fragmentTransaction.replace(R.id.a_main_rootview, fragment)
         fragmentTransaction.commit()
     }
@@ -74,22 +68,22 @@ class MainActivity : AppCompatActivity(), BookListFragment.OnBookClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Fetch the books from the server
-        getAllBooksRetrofit()
+
+        getAllArbresRetrofit()
 
 
     }
 
 
-    // Implementing the onBookClick method to handle book clicks
-    override fun onBookClick(book: Book) {
-        // Log the book clicked
-        Log.d("MainActivity", "Book clicked: ${book.name}")
 
-        Log.d("MainActivity", "Book clicked: ${book.name}")
+    override fun onArbreClick(arbre: Arbre) {
 
-        val intent = Intent(this, CreateBookActivity::class.java)
-        intent.putExtra(SHOW_BOOK, book)
+        Log.d("MainActivity", "Arbre clicked: ${arbre.name}")
+
+        Log.d("MainActivity", "Arbre clicked: ${arbre.name}")
+
+        val intent = Intent(this, CreateArbreActivity::class.java)
+        intent.putExtra(SHOW_ARBRE, arbre)
 
         // Log the bundle contents
         val bundle = intent.extras
@@ -122,29 +116,20 @@ class MainActivity : AppCompatActivity(), BookListFragment.OnBookClickListener {
         //val size = parcel.dataSize()
         //parcel.recycle()
 
-        //Log.d("CreateBookActivity", "Bundle size: $size bytes")
+
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
 
 
             R.id.menu_map -> {
-                // Passer la liste des livres au MapsFragment
-                // Envoyer seulement les 10 premiers éléments
-                val allBooks = bookshelf.getAllBooks()
-                //val firstTenBooks = if (allBooks.size > 10) allBooks.subList(0, 10) else allBooks
 
-                // Créer un Bundle et passer la liste des 10 premiers livres
+                val allArbres = arbreshelf.getAllArbres()
+
                 val bundle = Bundle()
-                bundle.putSerializable(MY_KEY, ArrayList(allBooks)) // Passer uniquement les 10 premiers livres
+                bundle.putSerializable(MY_KEY, ArrayList(allArbres))
 
-                //bundle.putSerializable(MY_KEY, ArrayList(firstTenBooks)) // Passer uniquement les 10 premiers livres
-
-
-                // Créer et afficher le fragment
                 val mapsFragment = MapsFragment()
                 mapsFragment.arguments = bundle
 
@@ -158,13 +143,16 @@ class MainActivity : AppCompatActivity(), BookListFragment.OnBookClickListener {
 
             R.id.menu_list -> {
                 // Execute the function when menu_list is selected
-                getAllBooksRetrofit()
+                getAllArbresRetrofit()
                 true // Indicate that the action was handled
             }
 
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
+
 
 
 }
