@@ -156,16 +156,6 @@ class MainActivity : AppCompatActivity(), ArbreListFragment.OnArbreClickListener
                 true
             }
 
-            R.id.menu_info -> {
-                // New code for menu_info
-                val infoFragment = InfoFragment()
-                val fragmentTransaction = supportFragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.a_main_rootview, infoFragment)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
-                true
-            }
-
             else -> super.onOptionsItemSelected(item)
         }
     }
