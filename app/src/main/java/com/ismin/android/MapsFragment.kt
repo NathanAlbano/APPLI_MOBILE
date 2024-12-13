@@ -13,15 +13,15 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
 
     private lateinit var googleMap: GoogleMap
-    private var books: List<Book> = emptyList()
+    private var arbres: List<Arbre> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Retrieve the books from the arguments
+
         arguments?.let {
-            books = it.getSerializable(MY_KEY) as? List<Book> ?: emptyList()
-            Log.d("MapsFragment", "Books received: ${books.size}")
+            arbres = it.getSerializable(MY_KEY) as? List<Arbre> ?: emptyList()
+            Log.d("MapsFragment", "Arbres received: ${arbres.size}")
         }
     }
 
@@ -38,13 +38,13 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
         Log.d("MapsFragment", "Google Map is ready")
 
         // Variable pour stocker le premier livre valide
-        var firstValidBook: Book? = null
+        var firstValidArbre: Arbre? = null
 
         // Parcourir la liste des livres
-        for (book in books) {
+        for (arbre in arbres) {
             try {
-                val latitude = book.latitude?.toDoubleOrNull()
-                val longitude = book.longitude?.toDoubleOrNull()
+                val latitude = arbre.latitude?.toDoubleOrNull()
+                val longitude = arbre.longitude?.toDoubleOrNull()
 
                 // Vérification des coordonnées
                 if (latitude != null && longitude != null) {
@@ -54,28 +54,28 @@ class MapsFragment : Fragment(R.layout.fragment_maps), OnMapReadyCallback {
                     googleMap.addMarker(
                         MarkerOptions()
                             .position(position)
-                            .title(book.name)
-                            .snippet("Author: ${book.name}")
+                            .title(arbre.name)
+                            .snippet("Author: ${arbre.name}")
                     )
 
-                    if (firstValidBook == null) {
-                        firstValidBook = book
+                    if (firstValidArbre == null) {
+                        firstValidArbre = arbre
                     }
 
-                    Log.d("MapsFragment", "Marker added: ${book.name} at ($latitude, $longitude)")
+                    Log.d("MapsFragment", "Marker added: ${arbre.name} at ($latitude, $longitude)")
                 } else {
-                    Log.e("MapsFragment", "Invalid coordinates for book: ${book.name}")
+                    Log.e("MapsFragment", "Invalid coordinates for arbre: ${arbre.name}")
                 }
             } catch (e: Exception) {
-                Log.e("MapsFragment", "Error processing book: ${book.name}", e)
+                Log.e("MapsFragment", "Error processing arbre: ${arbre.name}", e)
             }
         }
 
         // Centrer la carte
-        if (firstValidBook != null) {
+        if (firstValidArbre != null) {
             val firstPosition = LatLng(
-                firstValidBook.latitude!!.toDouble(),
-                firstValidBook.longitude!!.toDouble()
+                firstValidArbre.latitude!!.toDouble(),
+                firstValidArbre.longitude!!.toDouble()
             )
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(firstPosition, 10f))
         } else {

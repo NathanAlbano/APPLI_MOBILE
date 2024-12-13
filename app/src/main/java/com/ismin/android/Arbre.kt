@@ -2,7 +2,7 @@ package com.ismin.android
 
 import java.io.Serializable
 
-data class Book(
+data class Arbre(
     val name: String,
     val commune: String,
     val date: String,

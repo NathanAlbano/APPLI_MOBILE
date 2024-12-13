@@ -30,7 +30,7 @@
             android:value="AIzaSyCR8MjpwvgQ34ePj-pcULKqhSaEPHKFa1A" />
 
         <activity
-            android:name=".CreateBookActivity"
+            android:name=".CreateArbreActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
